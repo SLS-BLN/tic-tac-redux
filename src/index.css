@@ -7,3 +7,15 @@
   line-height: 1.5;
   font-weight: 400;
 }
+
+.active {
+  background-color: #444;
+}
+
+dialog[open] {
+  background-color: #444;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  opacity: 1;
+  transform: scaleY(1);
+}
