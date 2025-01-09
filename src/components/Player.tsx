@@ -30,31 +30,52 @@ export default function Player({ initialName, symbol, isActive }: PlayerProps) {
   }
 
   return (
-    <li className={`list-item ${isActive ? "active" : undefined}`}>
-      {!isEditing && <p className="player-name">{playerName}</p>}
-      {isEditing && (
-        <form onSubmit={handleSubmit} id="name-submit">
-          <label htmlFor="name">
-            <input
-              type="text"
-              id="name"
-              value={playerName}
-              onChange={handleChange}
-            />
-          </label>
-        </form>
-      )}
-
-      <p>{symbol}</p>
-      {isEditing && (
-        <button className="edit-btn" type="submit" form="name-submit">
-          {isEditing ? "Save" : "Edit"}
-        </button>
-      )}
+    <li
+    // className={`grid grid-cols-3 grid-rows-1 place-items-center gap-2 py-3 ${isActive ? "active" : ""}`}
+    >
       {!isEditing && (
-        <button className="edit-btn" onClick={handleEditClick} type="button">
-          {isEditing ? "Save" : "Edit"}
-        </button>
+        <section
+          className={`grid grid-cols-3 grid-rows-1 place-items-center gap-2 py-3 ${isActive ? "active" : ""}`}
+        >
+          <p className="font-semibold text-slate-100">{playerName}</p>
+          <p className="text-3xl text-slate-100">{symbol}</p>
+          <button
+            className="px-3 py-1 text-lg"
+            onClick={handleEditClick}
+            type="button"
+          >
+            Edit
+          </button>
+        </section>
+      )}
+      {isEditing && (
+        <section
+          className={`grid grid-cols-3 grid-rows-1 place-items-center gap-2 py-3 ${isActive ? "active" : ""}`}
+        >
+          <form
+            onSubmit={handleSubmit}
+            id="name-submit"
+            className="col-span-2 place-self-center"
+          >
+            <label htmlFor="name">
+              <input
+                type="text"
+                id="name"
+                placeholder={playerName}
+                onChange={handleChange}
+                // className="rounded border border-slate-400 bg-slate-700 px-1 py-1 text-slate-50"
+                className="rounded border border-slate-400 bg-slate-700 px-1 py-1 text-slate-50 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+              />
+            </label>
+          </form>
+          <button
+            className="px-3 py-1 text-lg"
+            type="submit"
+            form="name-submit"
+          >
+            Save
+          </button>
+        </section>
       )}
     </li>
   );

@@ -8,5 +8,9 @@ export default function Button({ onClick, text }: ButtonProps) {
     onClick();
   }
 
-  return <button onClick={handleClick}>{text}</button>;
+  return (
+    <button className="self-center" onClick={handleClick}>
+      {text}
+    </button>
+  );
 }

@@ -62,10 +62,10 @@ function App() {
       <Board>
         {isGameOver && winner !== "" && (
           <Message title="You win" winner={winner}>
-            <Button onClick={handleResetClick} text="Reset" />
+            <Button onClick={handleResetClick} text="New Game" />
           </Message>
         )}
-        {isGameOver && !isGameActive && winner === "" && (
+        {isGameOver && winner === "" && (
           <Message title="It's a draw">
             <Button onClick={handleResetClick} text="Try again" />
           </Message>
@@ -89,7 +89,9 @@ function App() {
           );
         })}
       </Board>
-      {!isGameActive && <Button onClick={handleStartClick} text="Start Game" />}
+      {!isGameActive && !isGameOver && (
+        <Button onClick={handleStartClick} text="Start Game" />
+      )}
     </>
   );
 }

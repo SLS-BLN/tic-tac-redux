@@ -26,7 +26,12 @@ export default function Field({
 
   if (isSelected)
     return (
-      <button disabled className="selected" type="button" id={buttonId}>
+      <button
+        disabled
+        className="selected bg-blue-800 text-3xl"
+        type="button"
+        id={buttonId}
+      >
         {value}
       </button>
     );
@@ -38,6 +43,7 @@ export default function Field({
       value={value}
       id={buttonId}
       type="button"
+      className="text-3xl"
     >
       {children}
     </button>

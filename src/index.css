@@ -6,16 +6,16 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  background-color: #333333;
 }
 
-.active {
-  background-color: #444;
-}
-
-dialog[open] {
-  background-color: #444;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  opacity: 1;
-  transform: scaleY(1);
+#root {
+  /*
+  TODO: calculate max-width by board and/or field width
+  player active and board should always align (responsive design) - at the moment this value is a hard coded guess
+   */
+  max-width: 442px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
