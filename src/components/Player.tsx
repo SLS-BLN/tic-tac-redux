@@ -63,7 +63,6 @@ export default function Player({ initialName, symbol, isActive }: PlayerProps) {
                 id="name"
                 placeholder={playerName}
                 onChange={handleChange}
-                // className="rounded border border-slate-400 bg-slate-700 px-1 py-1 text-slate-50"
                 className="rounded border border-slate-400 bg-slate-700 px-1 py-1 text-slate-50 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
               />
             </label>

@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import type { RootState } from "@reduxjs/toolkit/query";
 import { calculateWinner, checkDraw } from "../utils/winner";
 
 const NUM_FIELDS = 9;
@@ -11,7 +10,7 @@ interface GameState {
     X: string;
     O: string;
   };
-  board: (string | number | null)[];
+  board: (string | null)[];
   activeSymbol: "X" | "O";
   isGameActive: boolean;
   isGameOver: boolean;
@@ -109,11 +108,7 @@ export const {
 
 export default gameSlice.reducer;
 
-// TODO: what does this comment mean?
-// Other code such as selectors can use the imported `RootState` type
-// export const selectCount = (state: RootState) => state.game.value;
-
-function checkWinOrDraw(score, activeSymbol) {
+function checkWinOrDraw(score: (string | null)[], activeSymbol: string) {
   const hasWinner = calculateWinner(score, activeSymbol);
   const hasDraw = checkDraw(score);
   return [hasWinner, hasDraw];

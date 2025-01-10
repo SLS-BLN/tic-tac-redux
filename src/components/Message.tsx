@@ -14,6 +14,7 @@ export default function Message({
   children,
 }: MessageProps) {
   return (
+    // non-modal dialog is sufficient in this App
     <dialog
       open
       className="m flex w-72 flex-col content-center justify-evenly px-5 py-5"
@@ -27,3 +28,14 @@ export default function Message({
     </dialog>
   );
 }
+
+/*
+HTML non-modal element
+
+more info:
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+
+modal dialog requires in React the usage of useEffect and useRef
+https://dev.to/elsyng/react-modal-dialog-using-html-dialog-element-5afk
+https://www.youtube.com/watch?v=YwHJMlvZRCc
+*/

@@ -3,7 +3,7 @@ import { ReactNode, useState } from "react";
 interface FieldProps {
   disabled: boolean;
   onClick: (id: string) => void;
-  value: string;
+  value: string | null;
   id: number;
   children: ReactNode;
 }
@@ -40,7 +40,6 @@ export default function Field({
     <button
       disabled={disabled}
       onClick={() => handleClick(buttonId)}
-      value={value}
       id={buttonId}
       type="button"
       className="text-3xl"

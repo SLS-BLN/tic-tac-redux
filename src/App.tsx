@@ -70,7 +70,7 @@ function App() {
             <Button onClick={handleResetClick} text="Try again" />
           </Message>
         )}
-        {history.map((value, index) => {
+        {history.map((value: string | null, index) => {
           return (
             // all field components are destroyed when the game is over
             // this is neccessary to reset the isSeleceted state in every field component
