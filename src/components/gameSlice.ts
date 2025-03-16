@@ -85,7 +85,6 @@ export const gameSlice = createSlice({
 
       state.activeSymbol = state.activeSymbol === "X" ? "O" : "X";
     },
-    // TODO: initial board or new Array?
     resetBoard: (state) => {
       state.isGameActive = true;
       state.isGameOver = false;
